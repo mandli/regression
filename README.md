@@ -42,3 +42,21 @@ Create a python script for testing that makes it easy to run all the tests
 relevant to a particular repository.  Integrate this eventually with a 
 continuous integration server such as *Travis-CI*.
 
+Note:  Can add attributes to tests via decorators, e.g.
+
+    from nose.plugins.attrib import attr
+
+    @attr('visclaw','geoclaw')
+        def test1():
+        assert 0==0
+
+so that
+
+    nosetests -a geoclaw
+
+executes this test but
+
+    nosetests -a amrclaw
+
+does not.
+
